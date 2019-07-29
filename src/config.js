@@ -11,7 +11,12 @@ let mongoConfig = {
 	connection: `mongodb://${env.MONGO_HOSTNAME}`,
 	db_name: env.MONGO_DB_NAME,
 	options: {
-		auto_reconnect: true
+		useNewUrlParser: true,
+		auto_reconnect: true,
+		auth: {
+			user: env.MONGO_USER,
+			password: env.MONGO_PASSWORD
+		}
 	}
 };
 
